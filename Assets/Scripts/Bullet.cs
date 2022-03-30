@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.collider.CompareTag("Enemy"))
         {
+            this.PostEvent(GameEvent.OnBulletCollideEnemy);
             collision.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
         }
